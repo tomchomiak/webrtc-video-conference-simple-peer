@@ -153,7 +153,7 @@ function addPeer(socket_id, am_initiator) {
         newVid.muted = true
         newVid.srcObject = stream
         newVid.id = socket_id
-        newVid.playsinline = false
+        newVid.playsinline = true
         newVid.autoplay = true
         newVid.className = "vid"
         newVid.onclick = () => openPictureMode(newVid)
