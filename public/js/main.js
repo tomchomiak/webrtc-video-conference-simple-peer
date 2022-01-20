@@ -40,14 +40,15 @@ if(location.href.substr(0,5) !== 'https')
  */
 let constraints = {
     audio: true,
-    video: {
-        width: {
-            max: 300
-        },
-        height: {
-            max: 300
-        }
-    }
+    video: true, // Firefox fix
+    // video: {
+    //     width: {
+    //         max: 300
+    //     },
+    //     height: {
+    //         max: 300
+    //     }
+    // }
 }
 
 /////////////////////////////////////////////////////////
