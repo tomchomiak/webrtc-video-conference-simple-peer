@@ -161,28 +161,6 @@ function addPeer(socket_id, am_initiator) {
         newVid.onclick = () => openPictureMode(newVid)
         newVid.ontouchstart = (e) => openPictureMode(newVid)
         videos.appendChild(newVid)
-
-        // newVid.oncanplay = () => {
-
-
-
-            let videoBtn = document.createElement('button')
-            videoBtn.textContent = socket_id
-            videoBtn.addEventListener("click", function (){
-
-                const videoList = document.getElementsByTagName("video")
-                for (item in videoList) {
-                    let video = videoList[item]
-                    video.setAttribute('playsinline', true)
-                    video.play()
-                }
-
-            }, false)
-            document.body.appendChild(videoBtn)
-
-
-        // }
-
     })
 }
 
