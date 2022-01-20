@@ -171,6 +171,7 @@ function addPeer(socket_id, am_initiator) {
                 videoEl.play()
 
             }, false)
+            document.body.appendChild(videoBtn)
 
 
         }
