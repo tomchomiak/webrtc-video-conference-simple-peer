@@ -150,6 +150,7 @@ function addPeer(socket_id, am_initiator) {
 
     peers[socket_id].on('stream', stream => {
         let newVid = document.createElement('video')
+        newVid.muted = true
         newVid.srcObject = stream
         newVid.id = socket_id
         newVid.playsinline = false
