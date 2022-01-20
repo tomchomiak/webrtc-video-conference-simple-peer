@@ -168,7 +168,7 @@ function addPeer(socket_id, am_initiator) {
             videoBtn.textContent = socket_id
             videoBtn.addEventListener("click", function (){
                 let videoEl = document.getElementById(socket_id)
-                videoEl.playsinline = true
+                videoEl.setAttribute('playsinline', true)
                 videoEl.play()
 
             }, false)
