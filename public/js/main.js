@@ -25,8 +25,6 @@ if(location.href.substr(0,5) !== 'https')
     "iceServers": [{
             "urls": "stun:stun.l.google.com:19302"
         },
-        // public turn server from https://gist.github.com/sagivo/3a4b2f2c7ac6e1b5267c2f1f59ac6c6b
-        // set your own servers here
         {
             urls: 'turn:turn.panoskin.com:3478',
             credential: 'u1',
@@ -142,6 +140,7 @@ function addPeer(socket_id, am_initiator) {
     })
 
     peers[socket_id].on('signal', data => {
+        console.log('got signal')
         socket.emit('signal', {
             signal: data,
             socket_id: socket_id
@@ -149,6 +148,8 @@ function addPeer(socket_id, am_initiator) {
     })
 
     peers[socket_id].on('stream', stream => {
+
+        console.log('got stream')
 
         let newVid = document.createElement('video')
         newVid.srcObject = stream
