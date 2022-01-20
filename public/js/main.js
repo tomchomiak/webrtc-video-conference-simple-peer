@@ -163,8 +163,11 @@ function addPeer(socket_id, am_initiator) {
         videos.appendChild(newVid)
 
         newVid.oncanplay = () => {
+
+
             setTimeout(function(){
-                newVid.play()
+                let videoEl = document.getElementById(socket_id)
+                videoEl.play()
             }, 1000)
         }
 
