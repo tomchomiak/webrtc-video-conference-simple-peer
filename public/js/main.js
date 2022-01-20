@@ -149,8 +149,6 @@ function addPeer(socket_id, am_initiator) {
 
     peers[socket_id].on('stream', stream => {
 
-        console.log('got stream')
-
         let newVid = document.createElement('video')
         newVid.srcObject = stream
         newVid.id = socket_id
@@ -164,12 +162,18 @@ function addPeer(socket_id, am_initiator) {
 
         newVid.oncanplay = () => {
 
+
+
             let videoBtn = document.createElement('button')
             videoBtn.textContent = socket_id
             videoBtn.addEventListener("click", function (){
-                let videoEl = document.getElementById(socket_id)
-                videoEl.setAttribute('playsinline', true)
-                videoEl.play()
+
+                const videoList = document.getElementsByTagName("video")
+                for (item in videoList) {
+                    let video = videoList[item]
+                    video.setAttribute('playsinline', true)
+                    videoEl.play()
+                }
 
             }, false)
             document.body.appendChild(videoBtn)
