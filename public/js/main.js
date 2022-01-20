@@ -154,8 +154,8 @@ function addPeer(socket_id, am_initiator) {
         let newVid = document.createElement('video')
         newVid.srcObject = stream
         newVid.id = socket_id
-        newVid.playsinline = true
-        newVid.autoplay = true
+        newVid.setAttribute('playsinline', true)
+        newVid.setAttribute('autoplay', true)
         newVid.className = "vid"
         newVid.muted = true
         newVid.onclick = () => openPictureMode(newVid)
