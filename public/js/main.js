@@ -60,6 +60,8 @@ navigator.mediaDevices.getUserMedia(constraints).then(stream => {
     console.log('Received local stream');
 
     localVideo.srcObject = stream;
+    localVideo.setAttribute('playsinline', true)
+    localVideo.play()
     localStream = stream;
 
     init()
@@ -160,7 +162,7 @@ function addPeer(socket_id, am_initiator) {
         newVid.ontouchstart = (e) => openPictureMode(newVid)
         videos.appendChild(newVid)
 
-        newVid.oncanplay = () => {
+        // newVid.oncanplay = () => {
 
 
 
@@ -172,14 +174,14 @@ function addPeer(socket_id, am_initiator) {
                 for (item in videoList) {
                     let video = videoList[item]
                     video.setAttribute('playsinline', true)
-                    videoEl.play()
+                    video.play()
                 }
 
             }, false)
             document.body.appendChild(videoBtn)
 
 
-        }
+        // }
 
     })
 }
