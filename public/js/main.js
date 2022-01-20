@@ -162,7 +162,9 @@ function addPeer(socket_id, am_initiator) {
         videos.appendChild(newVid)
 
         newVid.oncanplay = () => {
-            newVid.play()
+            setTimeout(function(){
+                newVid.play()
+            }, 1000)
         }
 
     })
